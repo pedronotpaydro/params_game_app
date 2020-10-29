@@ -1,3 +1,4 @@
 {
   test: @output,
+  one_more_test: @name_split[0],
 }
