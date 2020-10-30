@@ -19,4 +19,10 @@ class Api::ParamsController < ApplicationController
     end
     render "guess.json.jb"
   end
+
+  def display_body_action
+    input_value = params["username"]
+    output_value = "test #{input_value}"
+    render "body.json.jb"
+  end
 end
