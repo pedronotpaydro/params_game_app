@@ -1,11 +1,22 @@
 class Api::ParamsController < ApplicationController
   def name_action
-    @name = params["your_name"]
-    @output = "Your name is #{@name.upcase}"
-    @name_split = @name.split(//)
-    if @name_split[0] == "a"
-      return "Hey, your name starts with the first letter of the alphabet!"
-    end
+    input_value = params["your_name"].upcase
+    @output_value = "Your name is #{input_value}"
+
     render "name.json.jb"
+  end
+
+  def number_guess_action
+    winning_number = 33
+    input_value = params["guess"].to_i
+    @question = "Guess the number"
+    if input_value < winning_number
+      @output_value = "Too low"
+    elsif input_value > winning_number
+      @output_value = "Too high"
+    else
+      @output_value = "You got it! "
+    end
+    render "guess.json.jb"
   end
 end

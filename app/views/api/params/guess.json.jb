@@ -1,0 +1,4 @@
+{
+  guess: @question,
+  answer: @output_value,
+}
